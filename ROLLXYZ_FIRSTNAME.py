@@ -8,19 +8,6 @@ class GameTreePlayer:
         self.depth = depth
         self.game = FourConnect()
     
-    # def FindBestAction(self,currentState):
-    #     """
-    #     Modify this function to search the GameTree instead of getting input from the keyboard.
-    #     The currentState of the game is passed to the function.
-    #     currentState[0][0] refers to the top-left corner position.
-    #     currentState[5][6] refers to the bottom-right corner position.
-    #     Action refers to the column in which you decide to put your coin. The actions (and columns) are numbered from left to right.
-    #     Action 0 is refers to the left-most column and action 6 refers to the right-most column.
-    #     """
-        
-    #     bestAction = input("Take action (0-6) : ")
-    #     bestAction = int(bestAction)
-    #     return bestAction
     def FindBestAction(self, state):
         best_move = None
         best_value = float('-inf')
@@ -152,10 +139,6 @@ def PlayGame():
         if fourConnect.winner!=None:
             break
     
-    """
-    You can add your code here to count the number of wins average number of moves etc.
-    You can modify the PlayGame() function to play multiple games if required.
-    """
     if fourConnect.winner==None:
         print("Game is drawn.")
     else:
@@ -163,10 +146,6 @@ def PlayGame():
     print("Moves : {0}".format(move))
 
 def RunTestCase():
-    """
-    This procedure reads the state in testcase.csv file and start the game.
-    Player 2 moves first. Player 2 must win in 5 moves to pass the testcase; Otherwise, the program fails to pass the testcase.
-    """
     
     fourConnect = FourConnect()
     gameTree = GameTreePlayer()
@@ -187,8 +166,6 @@ def RunTestCase():
         if fourConnect.winner!=None:
             break
     
-    print("Roll no : 2020B5A71839G") #Put your roll number here
-    
     if fourConnect.winner==2:
         print("Player 2 has won. Testcase passed.")
     else:
@@ -199,18 +176,6 @@ def RunTestCase():
 def main():
     
     PlayGame()
-    """
-    You can modify PlayGame function for writing the report
-    Modify the FindBestAction in GameTreePlayer class to implement Game tree search.
-    You can add functions to GameTreePlayer class as required.
-    """
-
-    """
-        The above code (PlayGame()) must be COMMENTED while submitting this program.
-        The below code (RunTestCase()) must be UNCOMMENTED while submitting this program.
-        Output should be your rollnumber and the bestAction.
-        See the code for RunTestCase() to understand what is expected.
-    """
     
     # RunTestCase()
 
